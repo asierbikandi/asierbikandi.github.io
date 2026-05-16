@@ -1,0 +1,295 @@
+/* =============================================================
+   SnT ARG — Design System Tokens
+   Automation and Robotics Group · SnT · University of Luxembourg
+   ============================================================= */
+
+/* ---------- Webfonts (Google Fonts substitution; see README) ---------- */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ---------- Brand palette ----------
+     Sampled directly from the official UniLu and SnT marks
+     (uploads/snt.png, uploads/universityofluxembourg.png) —
+     the live brand uses RED + CYAN + dark grey, with a PURPLE
+     accent reserved for the SnT mark itself.
+
+       - Brand red      #E01818  (UniLu signature accent)
+       - Brand cyan     #00A0D8  (UniLu signature accent)
+       - SnT purple     #502078  (only inside the SnT mark)
+       - Ink            #2A2A2A  (body text)
+       - Ink deep       #1A1A1A  (dark surfaces)
+       - Paper          #FFFFFF
+  */
+
+  /* Aliases — variable NAMES kept compatible with earlier files
+     so the rest of the system works unchanged. The semantic role
+     "headline accent" is now red (was magenta), and SnT purple
+     fills the "royal" slot.
+  */
+  --color-red:            #E01818;  /* UniLu red */
+  --color-red-deep:       #B81212;
+  --color-red-wash:       #FCE5E5;
+
+  --color-cyan:           #00A0D8;  /* UniLu cyan */
+  --color-cyan-deep:      #007CA8;
+  --color-cyan-wash:      #E6F5FB;
+
+  --color-purple:         #502078;  /* SnT purple */
+  --color-purple-deep:    #3A1758;
+  --color-purple-wash:    #EDE6F4;
+
+  --color-ink:            #2A2A2A;
+  --color-ink-deep:       #1A1A1A;
+
+  /* Back-compat names used by earlier cards / components */
+  --color-magenta:        var(--color-red);
+  --color-magenta-deep:   var(--color-red-deep);
+  --color-pink-wash:      var(--color-red-wash);
+  --color-pink-wash-2:    var(--color-red-wash);
+  --color-royal:          var(--color-purple);
+  --color-royal-tint:     #6A35A0;
+
+  --color-paper:          #FFFFFF;
+  --color-paper-warm:     #FAFAF9;   /* off-white panel */
+  --color-bone:           #F2F1EF;
+  --color-rule:           #E5E5E5;
+
+  /* Neutrals — a true neutral ramp anchored on the warm dark ink */
+  --color-grey-50:        #F7F7F7;
+  --color-grey-100:       #ECECEC;
+  --color-grey-200:       #DCDCDC;
+  --color-grey-300:       #B8B8B8;
+  --color-grey-400:       #8E8E8E;
+  --color-grey-500:       #686868;
+  --color-grey-600:       #4D4D4D;
+  --color-grey-700:       #353535;
+  --color-grey-800:       #232323;
+  --color-grey-900:       #1A1A1A;
+
+  /* Categorical (for charts, S-Graph layers, plot legends) —
+     extended from the three brand hues + neutral standbys. */
+  --c-cat-floors:    #502078;   /* SnT purple */
+  --c-cat-rooms:     #E01818;   /* UniLu red */
+  --c-cat-walls:     #00A0D8;   /* UniLu cyan */
+  --c-cat-cameras:   #1A1A1A;   /* ink */
+  --c-cat-objects:   #4D9F3F;   /* green */
+  --c-cat-bim:       #F39200;   /* amber */
+
+  /* ---------- Semantic foreground / background ---------- */
+  --fg-1: var(--color-ink-deep);     /* primary text */
+  --fg-2: var(--color-grey-600);     /* secondary text */
+  --fg-3: var(--color-grey-400);     /* tertiary / captions */
+  --fg-inv: var(--color-paper);
+  --fg-accent: var(--color-magenta);
+  --fg-link: var(--color-royal);
+
+  --bg-page: var(--color-paper);
+  --bg-elev: var(--color-paper);
+  --bg-sunk: var(--color-grey-50);
+  --bg-ink:  var(--color-ink-deep);
+  --bg-royal: var(--color-royal);
+
+  --rule-1: var(--color-grey-200);
+  --rule-2: var(--color-grey-100);
+  --rule-strong: var(--color-ink-deep);
+
+  /* ---------- Type system ---------- */
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: "Newsreader", "Source Serif Pro", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Base scale — modular 1.20 (minor third), rounded for screen.
+     Slide / poster use larger sizes via override. */
+  --fs-12: 12px;
+  --fs-13: 13px;
+  --fs-14: 14px;
+  --fs-15: 15px;
+  --fs-16: 16px;
+  --fs-18: 18px;
+  --fs-20: 20px;
+  --fs-24: 24px;
+  --fs-28: 28px;
+  --fs-32: 32px;
+  --fs-40: 40px;
+  --fs-48: 48px;
+  --fs-56: 56px;
+  --fs-64: 64px;
+  --fs-80: 80px;
+
+  --lh-tight:   1.08;
+  --lh-snug:    1.18;
+  --lh-normal:  1.45;
+  --lh-relaxed: 1.6;
+
+  --tracking-tight: -0.015em;
+  --tracking-snug:  -0.01em;
+  --tracking-flat:  0em;
+  --tracking-wide:  0.06em;
+  --tracking-eyebrow: 0.14em;
+
+  /* ---------- Spacing (4px base) ---------- */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* ---------- Radii ---------- */
+  --radius-0: 0;
+  --radius-1: 2px;
+  --radius-2: 4px;
+  --radius-3: 8px;
+  --radius-4: 12px;
+  --radius-pill: 999px;
+
+  /* ---------- Shadows / elevation ----------
+     Tuned cool to match navy ink. Used sparingly — the brand
+     leans more on hairline rules + flat color than on shadows. */
+  --shadow-1: 0 1px 0 rgba(12, 10, 54, 0.06), 0 0 0 1px rgba(12, 10, 54, 0.04);
+  --shadow-2: 0 1px 2px rgba(12, 10, 54, 0.06), 0 4px 12px rgba(12, 10, 54, 0.06);
+  --shadow-3: 0 2px 4px rgba(12, 10, 54, 0.08), 0 12px 28px rgba(12, 10, 54, 0.10);
+  --shadow-focus: 0 0 0 3px rgba(64, 192, 226, 0.45);
+  --shadow-inset: inset 0 0 0 1px rgba(12, 10, 54, 0.08);
+
+  /* ---------- Motion ---------- */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);     /* enter */
+  --ease-out:      cubic-bezier(0.2, 0.7, 0, 1);
+  --ease-in:       cubic-bezier(0.4, 0, 1, 1);
+  --dur-1: 120ms;
+  --dur-2: 200ms;
+  --dur-3: 320ms;
+  --dur-4: 560ms;
+}
+
+/* ---------- Semantic type roles ---------- */
+
+.t-eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-12);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-magenta);
+}
+
+.t-display {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--fs-64);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+}
+
+.t-h1 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--fs-48);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+}
+
+.t-h2 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-32);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--fg-1);
+}
+
+.t-h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-24);
+  line-height: var(--lh-snug);
+  color: var(--fg-1);
+}
+
+.t-h4 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-18);
+  line-height: var(--lh-snug);
+  color: var(--fg-1);
+}
+
+.t-lede {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-20);
+  line-height: var(--lh-normal);
+  color: var(--fg-1);
+  text-wrap: pretty;
+}
+
+.t-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-16);
+  line-height: var(--lh-normal);
+  color: var(--fg-1);
+}
+
+.t-small {
+  font-family: var(--font-sans);
+  font-size: var(--fs-14);
+  line-height: var(--lh-normal);
+  color: var(--fg-2);
+}
+
+.t-caption {
+  font-family: var(--font-sans);
+  font-size: var(--fs-13);
+  line-height: var(--lh-normal);
+  color: var(--fg-2);
+  letter-spacing: 0.005em;
+}
+
+.t-meta {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--fs-12);
+  letter-spacing: 0.02em;
+  color: var(--fg-2);
+  text-transform: uppercase;
+}
+
+.t-code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--color-grey-50);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-2);
+  color: var(--color-ink-deep);
+}
+
+.t-author {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: var(--fs-18);
+  color: var(--fg-1);
+}
+
+.t-quote {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: var(--fs-28);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.005em;
+  color: var(--fg-1);
+}
+
+/* Tabular numerals for tables, equations, metrics */
+.t-num { font-variant-numeric: tabular-nums lining-nums; }
