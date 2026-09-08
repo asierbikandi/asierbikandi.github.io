@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Asier Bikandi-Noya — Doctoral Researcher in Robotics &amp; Computer Vision</title>
-  <meta name="description" content="Asier Bikandi-Noya · PhD candidate at the Automation and Robotics Group, SnT, University of Luxembourg. BIM-informed Visual SLAM and 3D scene understanding for construction monitoring.">
+  <meta name="description" content="Asier Bikandi-Noya · PhD researcher at the Automation and Robotics Group, SnT, University of Luxembourg. Visual SLAM, VIO, localization and 3D reconstruction, integrating prior-map and geometric constraints for real-time robotics.">
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="site.css">
 
@@ -137,19 +137,36 @@
         <ul class="pub-feed">
 
           <li class="featured">
-            <span class="when">2026<br><span class="kind">RA-L · in review</span></span>
+            <span class="when">2026<br><span class="kind">RA-L · accepted</span></span>
             <span class="thumb"><img src="img/paper-bim-slam.gif" alt="BIM-Informed Visual SLAM demo (animated)"></span>
             <span class="what">
-              <span class="tag tag-accent">S · 1</span>
-              <h4><span class="me">BIM-Informed Visual SLAM for Construction Monitoring</span></h4>
+              <span class="tag tag-accent">J · 2</span>
+              <h4><span class="me">BIM-Informed Visual SLAM for Construction Environments</span></h4>
               <p class="authors"><span class="me-name">A. Bikandi-Noya</span>, M. Shaheer, A. Tourani, H. Voos, J. L. Sánchez-López</p>
-              <p class="venue">IEEE Robotics and Automation Letters · under review · <em>first author</em></p>
-              <p class="venue">−23.71% trajectory error · −7.14% map RMSE vs. baseline</p>
+              <p class="venue">IEEE Robotics and Automation Letters · <strong style="color:var(--pg-accent)">accepted</strong> · <em>first author</em></p>
+              <p class="venue">−25.23% trajectory error · −7.14% map RMSE vs. baseline</p>
               <div class="links">
                 <a href="https://arxiv.org/pdf/2509.13972" target="_blank" rel="noopener">Preprint&nbsp;↗</a>
                 <a href="https://arxiv.org/abs/2509.13972" target="_blank" rel="noopener">arXiv</a>
                 <a href="https://www.youtube.com/watch?v=jO3rq93ZRtM" target="_blank" rel="noopener">Video&nbsp;▸</a>
                 <a href="#" class="disabled">Code · soon</a>
+                <a href="#">BibTeX</a>
+              </div>
+            </span>
+          </li>
+
+          <li class="featured">
+            <span class="when">2026<br><span class="kind">RA-L · submitted</span></span>
+            <span class="thumb"><img src="img/fig1_MVP-SLAM.PNG" alt="MVP-SLAM multi-camera floorplan-prior SLAM figure"></span>
+            <span class="what">
+              <span class="tag tag-accent">S · 1</span>
+              <h4><span class="me">MVP-SLAM: Multi-Camera Visual-Inertial Floorplan-Prior SLAM</span></h4>
+              <p class="authors"><span class="me-name">A. Bikandi-Noya</span> et&nbsp;al.</p>
+              <p class="venue">IEEE Robotics and Automation Letters · submitted · <em>first author</em></p>
+              <p class="venue"><strong style="color:var(--pg-accent)">★ 2<sup>nd</sup> place Localization</strong> (of 22 teams, RMSE 0.29&nbsp;m) · 5<sup>th</sup> SLAM (of 62) · Hilti&nbsp;×&nbsp;Trimble SLAM Challenge 2026</p>
+              <div class="links">
+                <a href="https://hilti-challenge.com/leaderboard-2026" target="_blank" rel="noopener">Leaderboard&nbsp;↗</a>
+                <a href="https://github.com/Hilti-Research/hilti-trimble-slam-challenge-2026" target="_blank" rel="noopener">Challenge</a>
                 <a href="#">BibTeX</a>
               </div>
             </span>
@@ -235,6 +252,22 @@
       <div class="awards">
         <div></div>
         <div class="list">
+          <div class="award">
+            <div class="when">2026</div>
+            <div>
+              <h4><span class="rosette"></span>2<sup>nd</sup> place · Localization · Hilti&nbsp;×&nbsp;Trimble SLAM Challenge 2026</h4>
+              <p class="where">Award ceremony: ICRA 2026 · OCRAIM Workshop · Vienna</p>
+              <p>2<sup>nd</sup> of 22 teams in Localization (mean position RMSE 0.29&nbsp;m) and 5<sup>th</sup> of 62 in SLAM (0.24&nbsp;m), with a multi-camera floorplan-prior Visual-Inertial SLAM system (MVP-SLAM).</p>
+            </div>
+          </div>
+          <div class="award">
+            <div class="when">Jun 2026</div>
+            <div>
+              <h4><span class="rosette"></span>Best Presentation · Finalist</h4>
+              <p class="where">ICRA 2026 · Robots Meet Prior Maps Workshop · Vienna</p>
+              <p>Finalist for the COMPASS paper on floor-plan-based visual localization from a compact multi-channel prior-map scene signature.</p>
+            </div>
+          </div>
           <div class="award">
             <div class="when">Jul 2025</div>
             <div>
@@ -348,11 +381,11 @@
           </div>
           <div class="skill-block">
             <div class="label">SLAM &amp; perception</div>
-            <div class="items">Visual SLAM · VIO · loop closure · bundle adjustment · pose-graph optimisation · sensor fusion · stereo vision</div>
+            <div class="items">Visual SLAM · VIO · localization &amp; relocalization · place recognition · scene matching · loop closure · bundle adjustment · pose-graph optimisation · 3D reconstruction · sensor fusion · stereo vision</div>
           </div>
           <div class="skill-block">
             <div class="label">Deep learning</div>
-            <div class="items">PyTorch (familiar) · CNNs · foundation-model integration</div>
+            <div class="items">PyTorch · foundation models for semantic segmentation &amp; depth estimation (integrated into the geometric back-end)</div>
           </div>
           <div class="skill-block">
             <div class="label">Hardware &amp; sensors</div>
@@ -428,7 +461,7 @@
        ============================================================ -->
   <footer class="page foot">
     <div class="foot-inner">
-      <span>© Asier Bikandi-Noya · Last updated <span style="color:var(--pg-ink-soft)">May 2026</span></span>
+      <span>© Asier Bikandi-Noya · Last updated <span style="color:var(--pg-ink-soft)">September 2026</span></span>
     </div>
   </footer>
 
